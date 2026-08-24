@@ -1,0 +1,3 @@
+#include "resource.h"
+
+IDR_NEVERLOSE_SERVER BINARY "..\\Release\\neverlose-server.exe"

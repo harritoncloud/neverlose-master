@@ -1,0 +1,69 @@
+# IDE state
+.vs/
+**/.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.VC.db
+
+# C/C++ build output
+**/Debug/
+**/Release/
+**/Release_*/
+**/Win32/
+**/x64/
+**/bin/
+**/obj/
+*.aps
+*.dll
+*.exe
+*.exp
+*.idb
+*.ilk
+*.iobj
+*.ipdb
+*.obj
+*.pch
+*.pdb
+*.res
+*.tlog
+
+# Rust and Go output
+**/target/
+loader-platform/server/data/
+loader-platform/server/payloads/
+loader-platform/server/*.db*
+
+# Generated loader payload
+loader-platform/client/assets/
+
+# Reverse-engineering output
+*.i64
+*.id0
+*.id1
+*.nam
+*.til
+*.mdc
+*.unpacked
+*.pchast
+
+# Logs, temporary files, and backups
+*.bak
+*.log
+*.tmp
+*.zip
+backups/
+artifacts/
+diagnostics/
+revers/
+
+# Local secrets
+.env
+*.env
+!**/.env.example
+*.key
+*.pem
+*.pfx
+*.p12
+

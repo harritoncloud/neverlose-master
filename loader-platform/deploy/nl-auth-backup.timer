@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily NL Auth backup
+
+[Timer]
+OnCalendar=*-*-* 03:20:00 UTC
+Persistent=true
+RandomizedDelaySec=10m
+Unit=nl-auth-backup.service
+
+[Install]
+WantedBy=timers.target

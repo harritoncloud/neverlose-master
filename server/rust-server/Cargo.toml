@@ -1,0 +1,29 @@
+[package]
+name = "neverlose-server"
+version = "0.1.0"
+edition = "2024"
+default-run = "neverlose-server"
+
+[dependencies]
+axum = { version = "0.8", features = ["ws"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+base64 = "0.22"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+http = "1"
+nl_parser = { path = "nl_parser" }
+uuid = { version = "1", features = ["v4"] }
+anyhow = "1"
+rmp-serde = "1"
+flatbuffers = "24.3.25"
+axum-server = { version = "0.7", features = ["tls-rustls"] }
+rustls = { version = "0.23", features = ["ring"] }
+rcgen = "0.13"
+notify = { version = "7", default-features = false }
+indexmap = "2"
+
+[profile.release]
+strip = true
+lto = true

@@ -1,0 +1,9 @@
+dist/
+*.db
+*.db-shm
+*.db-wal
+*.env
+secrets/
+payloads/
+client/bin/
+client/obj/

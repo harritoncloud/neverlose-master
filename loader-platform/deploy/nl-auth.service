@@ -1,0 +1,46 @@
+[Unit]
+Description=NL license and artifact service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=nl-auth
+Group=nl-auth
+WorkingDirectory=/var/lib/nl-auth
+EnvironmentFile=/etc/nl-auth/nl-auth.env
+ExecStart=/opt/nl-auth/nl-auth serve
+Restart=on-failure
+RestartSec=3s
+TimeoutStopSec=20s
+UMask=0077
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+ProcSubset=pid
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictNamespaces=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+ReadWritePaths=/var/lib/nl-auth
+ReadOnlyPaths=/etc/nl-auth
+
+[Install]
+WantedBy=multi-user.target
